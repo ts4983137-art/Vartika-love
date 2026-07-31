@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>For Vartika ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+ margin:0;
+ min-height:100vh;
+ overflow:hidden;
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+ background:linear-gradient(135deg,#ff758c,#ff7eb3);
+ color:white;
+}
+
+.container{
+ min-height:100vh;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+ padding:20px;
+}
+
+.card{
+ width:100%;
+ max-width:430px;
+ padding:35px 25px;
+ text-align:center;
+ border-radius:30px;
+ background:rgba(255,255,255,.17);
+ backdrop-filter:blur(15px);
+ box-shadow:0 20px 60px rgba(80,0,30,.3);
+}
+
+.heart{
+ font-size:65px;
+ animation:pulse 1.5s infinite;
+}
+
+.small{
+ font-size:12px;
+ letter-spacing:2px;
+ text-transform:uppercase;
+ opacity:.9;
+}
+
+h1{
+ font-size:44px;
+ margin:8px 0;
+}
+
+h2{
+ font-size:20px;
+ font-weight:500;
+}
+
+p{
+ line-height:1.7;
+ font-size:16px;
+}
+
+button{
+ border:0;
+ border-radius:30px;
+ padding:14px 22px;
+ margin:7px;
+ font-size:15px;
+ font-weight:bold;
+ cursor:pointer;
+ background:white;
+ color:#e84b75;
+}
+
+.letter{
+ display:none;
+ margin-top:20px;
+ padding:18px;
+ border-radius:20px;
+ background:rgba(255,255,255,.14);
+ text-align:left;
+}
+
+.music{
+ background:rgba(255,255,255,.2);
+ color:white;
+ border:1px solid rgba(255,255,255,.4);
+}
+
+.float{
+ position:fixed;
+ bottom:-40px;
+ font-size:22px;
+ animation:rise 7s linear infinite;
+ opacity:.7;
+}
+
+@keyframes pulse{
+ 50%{transform:scale(1.12)}
+}
+
+@keyframes rise{
+ to{
+  transform:translateY(-110vh) rotate(30deg);
+  opacity:0;
+ }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<div class="card">
+
+<div class="heart">❤️</div>
+
+<div class="small">A little surprise from Tanish</div>
+
+<h1>Vartika</h1>
+
+<h2>Happy Girlfriend Day 🥹💕</h2>
+
+<p>
+Some people become a beautiful part of your story...
+and then there is <b>you</b>, who became my favourite part of it. ❤️
+</p>
+
+<button onclick="openLetter()">
+Open My Heart 💌
+</button>
+
+<button class="music" onclick="music()">
+♪ Play Music
+</button>
+
+<div class="letter" id="letter">
+
+<p><b>Vartika, ❤️</b></p>
+
+<p>
+I may not always find the perfect words,
+but having you in my life makes everything
+feel a little more special.
+</p>
+
+<p>
+Thank you for every smile, every memory,
+every silly fight and every little moment
+we have shared. 🫶🏻
+</p>
+
+<p>
+If I could choose one person to keep making
+memories with, I would choose you again. ❤️
+</p>
+
+<p style="text-align:center;font-size:20px">
+<b>Happy Girlfriend Day, meri jaan. ❤️♾️</b>
+</p>
+
+<p style="text-align:right">
+— Tanish 🫶🏻
+</p>
+
+</div>
+
+</div>
+</div>
+
+<script>
+
+function openLetter(){
+ document.getElementById("letter").style.display="block";
+}
+
+let audio;
+let playing=false;
+
+function music(){
+
+ if(!audio){
+  audio=new Audio(
+   "https://cdn.pixabay.com/audio/2022/10/25/audio_946c8b7a4e.mp3"
+  );
+  audio.loop=true;
+ }
+
+ if(!playing){
+  audio.play();
+  playing=true;
+  event.target.innerText="Ⅱ Pause Music";
+ }else{
+  audio.pause();
+  playing=false;
+  event.target.innerText="♪ Play Music";
+ }
+}
+
+for(let i=0;i<20;i++){
+
+ let s=document.createElement("span");
+
+ s.className="float";
+
+ s.innerText=["❤️","💕","💗","✨"][i%4];
+
+ s.style.left=Math.random()*100+"vw";
+
+ s.style.animationDelay=Math.random()*6+"s";
+
+ document.body.appendChild(s);
+
+}
+
+</script>
+
+</body>
+</html>
